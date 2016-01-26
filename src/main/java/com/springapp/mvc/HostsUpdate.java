@@ -64,6 +64,21 @@ public class HostsUpdate {
 	public static String getGoogleHosts(){
 		String lineSeparator = System.getProperty("line.separator");
 		String hostsString = "127.0.0.1 localhost" + lineSeparator;
+		hostsString += candaoServerHost + " berbon.candao.com" + lineSeparator;
+		hostsString += yanfaServerHost + " login.berbon.com" + lineSeparator;
+		hostsString += yanfaServerHost + " user.berbon.com" + lineSeparator;
+		hostsString += yanfaServerHost + " static.berbon.com" + lineSeparator;
+		hostsString += yanfaServerHost + " image.berbon.com" + lineSeparator;
+		hostsString += yanfaServerHost + " d.berbon.com" + lineSeparator;
+		hostsString += yanfaServerHost + " m.berbon.com" + lineSeparator;
+		hostsString += yanfaServerHost + " dshop.berbon.com" + lineSeparator;
+		hostsString += yanfaServerHost + " www.monitor.com" + lineSeparator;
+		hostsString += yanfaServerHost + " www.berbon.com" + lineSeparator;
+		hostsString += yanfaServerHost + " cms.berbon.com" + lineSeparator;
+		hostsString += yanfaServerHost + " newcms.berbon.com" + lineSeparator;
+		hostsString += yanfaServerHost + " bbs.berbon.com" + lineSeparator;
+		hostsString += yanfaServerHost + " shop.berbon.com" + lineSeparator;
+		hostsString += yanfaServerHost + " file.berbon.com" + lineSeparator;
 		hostsString += "127.0.0.1 l.qq.com" + lineSeparator;
 		hostsString += "127.0.0.1 ra.gtimg.com" + lineSeparator;
 		hostsString += "127.0.0.1 livec.l.qq.com" + lineSeparator;
