@@ -11,6 +11,8 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Controller
 @RequestMapping("/")
@@ -28,13 +30,34 @@ public class HelloController {
 	private void download(HttpServletResponse response) {
 		try {
 			response.reset();
-			response.setContentType("application/x-msdownload");
-			response.addHeader("Content-Disposition", "attachment;filename=hosts.txt");
-			ServletOutputStream sos=response.getOutputStream();
+			response.setContentType("application/x-download");
+			response.addHeader("Content-Disposition", "attachment;filename=hosts_" + getTodayString() + ".txt");
+			ServletOutputStream sos = response.getOutputStream();
 			sos.write(HostsUpdate.getGoogleHosts().getBytes());
 			sos.close();
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}
+	}
+
+	@RequestMapping(value = "/downloadBat", method = RequestMethod.GET)
+	private void downloadBat(HttpServletResponse response) {
+		try {
+		    response.reset();
+			response.setContentType("application/x-download");
+			response.addHeader("Content-Disposition", "attachment;filename=run.bat");
+			ServletOutputStream sos = response.getOutputStream();
+			String content = "copy hosts_" + getTodayString() + ".txt C:\\Windows\\System32\\drivers\\etc\\hosts";
+			sos.write(content.getBytes());
+			sos.close();
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+	}
+
+
+	private  String getTodayString(){
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+		return sdf.format(new Date());
 	}
 }

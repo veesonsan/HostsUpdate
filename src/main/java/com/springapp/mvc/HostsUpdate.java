@@ -62,7 +62,32 @@ public class HostsUpdate {
 	}
 
 	public static String getGoogleHosts(){
-		String hostsString = "";
+		String lineSeparator = System.getProperty("line.separator");
+		String hostsString = "127.0.0.1 localhost" + lineSeparator;
+		hostsString += "127.0.0.1 l.qq.com" + lineSeparator;
+		hostsString += "127.0.0.1 ra.gtimg.com" + lineSeparator;
+		hostsString += "127.0.0.1 livec.l.qq.com" + lineSeparator;
+		hostsString += "127.0.0.1 atm.youku.com" + lineSeparator;
+		hostsString += "127.0.0.1 Fvid.atm.youku.com" + lineSeparator;
+		hostsString += "127.0.0.1 html.atm.youku.com" + lineSeparator;
+		hostsString += "127.0.0.1 valb.atm.youku.com" + lineSeparator;
+		hostsString += "127.0.0.1 valf.atm.youku.com" + lineSeparator;
+		hostsString += "127.0.0.1 valo.atm.youku.com" + lineSeparator;
+		hostsString += "127.0.0.1 valp.atm.youku.com" + lineSeparator;
+		hostsString += "127.0.0.1 lstat.youku.com" + lineSeparator;
+		hostsString += "127.0.0.1 speed.lstat.youku.com" + lineSeparator;
+		hostsString += "127.0.0.1 urchin.lstat.youku.com" + lineSeparator;
+		hostsString += "127.0.0.1 stat.youku.com" + lineSeparator;
+		hostsString += "127.0.0.1 static.lstat.youku.com" + lineSeparator;
+		hostsString += "127.0.0.1 valc.atm.youku.com" + lineSeparator;
+		hostsString += "127.0.0.1 vid.atm.youku.com" + lineSeparator;
+		hostsString += "127.0.0.1 walp.atm.youku.com" + lineSeparator;
+		hostsString += "127.0.0.1 afp.qiyi.com" + lineSeparator;
+		hostsString += "127.0.0.1 focusbaiduafp.allyes.com" + lineSeparator;
+		hostsString += "127.0.0.1 dcads.sina.com.cn" + lineSeparator;
+		hostsString += "127.0.0.1 pp2.pptv.com" + lineSeparator;
+		hostsString += "127.0.0.1 pro.letv.com" + lineSeparator;
+		hostsString += "127.0.0.1 images.sohu.com" + lineSeparator;
 		Pattern pattern = Pattern.compile("[a-zA-z]+://[^\\s]*txt");
 		String result = get("http://zeus.softweek.net/item-slt-1.html");
 		if (result != null) {
