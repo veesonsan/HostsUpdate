@@ -33,7 +33,7 @@ public class HelloController {
 			response.setContentType("application/x-download");
 			response.addHeader("Content-Disposition", "attachment;filename=hosts_" + getTodayString() + ".txt");
 			ServletOutputStream sos = response.getOutputStream();
-			sos.write(HostsUpdate.getGoogleHosts().getBytes());
+			sos.write(HostsUpdate.getGoogleHosts().replace("\n","\r\n").getBytes());
 			sos.close();
 		} catch (IOException ex) {
 			ex.printStackTrace();
