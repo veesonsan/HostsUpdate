@@ -22,7 +22,7 @@ public class HelloController {
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
 		model.addAttribute("message", HostsUpdate.getGoogleHosts().replaceAll("[\\n]", "<br>"));
-		return "list";
+		return "listPage";
 	}
 	@RequestMapping(value = "/downloadHosts", method = RequestMethod.GET)
 	private void download(HttpServletResponse response) {
